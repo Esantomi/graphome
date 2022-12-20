@@ -1,0 +1,220 @@
+<!-- This template was created using vis.js by DHaein(https://github.com/Esantomi).
+    Please don't delete this comment. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body, div {
+        font-family: 'Gowun Batang', serif;
+      }
+      #mynetwork {
+        width: 100vw;
+        height: 100vh;
+        /* border: 1px solid lightgray; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+      // just maintain whitespace
+      function preTitle(text) {
+        const container = document.createElement("pre");
+        container.innerText = text;
+        return container;
+      }
+
+      // HTML parsing with all XSS goodness
+      function htmlTitle(html) {
+        const container = document.createElement("div");
+        container.innerHTML = html;
+        return container;
+      }
+
+      var DIR = "./img/";
+
+      // create an array with nodes
+      var nodes = new vis.DataSet([
+        {
+          id: "me",
+          label: "지해인",
+          font: {
+            size: 25,
+            face: 'Gowun Batang',
+          },
+          title: htmlTitle("안녕하세요, 저는 지해인입니다. 그리고 이곳은 제 홈페이지입니다."),
+          x: 0,
+          y: 0,
+          shape: "image",
+          image: DIR + "profile.png",
+          size: "110",
+          link: '#',
+          fixed: true
+        },
+        { 
+          id: "family",
+          label: "family",
+          title: htmlTitle("제 가족들입니다."),
+        },
+        { id: "wife", 
+          label: "이천산",
+          font: {
+            size: 20,
+            face: 'Gowun Batang',
+          },
+          title: htmlTitle("제 와이프입니다."),
+          shape: "image",
+          image: DIR + "wife.png",
+          size: "50",
+          link: '#'
+        },
+        { 
+          id: "kokam",
+          label: "꼬깜",
+          font: {
+            size: 20,
+            face: 'Gowun Batang',
+          },
+          title: htmlTitle("제가 키우는 고슴도치입니다."),
+          shape: "image",
+          image: DIR + "kokam.png",
+          size: "50",
+          link: '#'
+        },
+        { 
+          id: "document",
+          label: "document",
+          title: htmlTitle("저와 관련된 웹 페이지들입니다."),
+        },
+        { 
+          id: "git",
+          label: "Github",
+          title: htmlTitle("더블 클릭 시 깃허브 페이지로 이동합니다."),
+          shape: "image",
+          image: "https://url.kr/xn2pzb",
+          size: "50",
+          link: "https://github.com/Esantomi"
+        },
+        { 
+          id: "cv",
+          label: "CV",
+          title: htmlTitle("더블 클릭 시 CV 페이지로 이동합니다."),
+          shape: "image",
+          image: DIR + "cv.png",
+          size: "50",
+          link: "src/cv.pdf"
+        },
+        { 
+          id: "hobby",
+          label: "Hobby",
+          title: htmlTitle("제 취미들입니다."),
+        },
+        { 
+          id: "cartoon",
+          label: "Cartoon",
+          title: htmlTitle("제가 그리는 만화들입니다."),
+          shape: "image",
+          image: DIR + "cartoon.png",
+          size: "70",
+          link: "https://hedgehogtoon.site/"
+        }
+      ]);
+
+      // create an array with edges
+      var edges = new vis.DataSet([
+        { from: 'family', to: 'me', label: "foaf:member", length: 200 },
+        { from: 'family', to: 'wife', label: "foaf:member", length: 50 },
+        { from: 'family', to: 'kokam', label: "foaf:member", length: 50 },
+        { from: 'me', to: 'document', label: "dcterms:creator", length: 200 },
+        { from: 'git', to: 'document', label: "foaf:page", length: 50 },
+        { from: 'cv', to: 'document', label: "foaf:page", length: 50 },
+        { from: 'me', to: 'hobby', label: "foaf:interest", length: 200 },
+        { from: 'cartoon', to: 'hobby', label: "foaf:topic", length: 50 },
+        { from: 'cartoon', to: 'kokam', label: "foaf:depicts", length: 200 },
+      ]);
+
+      // create a network
+      var container = document.getElementById("mynetwork");
+      var data = {
+        nodes: nodes,
+        edges: edges,
+      };
+      var options = {
+        layout: {
+          randomSeed: 7,
+        },
+        interaction: {
+          navigationButtons: true,
+          keyboard: true,
+          zoomView: false
+        },
+        physics:{
+          enabled: true,
+          barnesHut: {
+            theta: 0.5,
+            gravitationalConstant: -10000,
+            centralGravity: 0,
+            springLength: 95,
+            springConstant: 0.04,
+            damping: 0.09,
+            avoidOverlap: 0
+          },
+        //   forceAtlas2Based: {
+        //     theta: 0.5,
+        //     gravitationalConstant: -50,
+        //     centralGravity: 0.01,
+        //     springConstant: 0.08,
+        //     springLength: 100,
+        //     damping: 0.4,
+        //     avoidOverlap: 0
+        //   },
+        //   repulsion: {
+        //     centralGravity: 0.2,
+        //     springLength: 200,
+        //     springConstant: 0.05,
+        //     nodeDistance: 100,
+        //     damping: 0.09
+        //   },
+        //   hierarchicalRepulsion: {
+        //     centralGravity: 0.0,
+        //     springLength: 100,
+        //     springConstant: 0.01,
+        //     nodeDistance: 120,
+        //     damping: 0.09,
+        //     avoidOverlap: 0
+        //   },
+          maxVelocity: 50,
+          minVelocity: 0.1,
+          solver: 'barnesHut',
+          stabilization: {
+            enabled: true,
+                iterations: 500,
+                updateInterval: 100,
+                onlyDynamicEdges: false,
+                fit: true
+          },
+          timestep: 0.5,
+          adaptiveTimestep: true,
+          wind: { x: 0, y: 0 }
+        }
+      };
+      var network = new vis.Network(container, data, options);
+      network.fit();
+
+      network.on('doubleClick', function(paramObject){
+        window.open(nodes.get(paramObject.nodes[0]).link);
+      });  // selectNode으로 바꾸면 클릭만 해도 연결
+    </script>
+  </body>
+</html>
