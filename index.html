@@ -17,12 +17,25 @@
         padding: 0;
         height: 100%;
       }
-      body, div {
+      body, div, p {
         font-family: 'Gowun Batang', serif;
+      }
+      h2 { 
+        font-size: 200%;
+        font-weight: bold;
+        /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); */
+        color: black;
+        /* border-bottom: 2px solid #ccc; */
+        /* border-left: 10px solid #55555B; */
+        padding: 0px 0px;
+        margin: 0px 0px;
+        margin-top: 10px;
+        letter-spacing: 1px;
+        word-spacing: 3px;
       }
       #mynetwork {
         width: 100%;
-        height: 80vh;
+        height: 82vh;
         /* border: 1px solid lightgray; */
       }
     </style>
@@ -62,7 +75,7 @@
           y: 0,
           shape: "image",
           image: DIR + "profile.png",
-          size: "110",
+          size: "100",
           link: '#',
           fixed: true
         },
@@ -139,7 +152,7 @@
           title: htmlTitle("제가 그리는 만화들입니다."),
           shape: "image",
           image: DIR + "cartoon.png",
-          size: "70",
+          size: "50",
           link: "https://hedgehogtoon.site/"
         }
       ]);
@@ -155,7 +168,7 @@
         { from: 'wiki', to: 'document', label: "foaf:page", length: 50 },
         { from: 'me', to: 'hobby', label: "foaf:interest", length: 200 },
         { from: 'cartoon', to: 'hobby', label: "foaf:topic", length: 50 },
-        { from: 'cartoon', to: 'kokam', label: "foaf:depicts", length: 200 },
+        { from: 'cartoon', to: 'kokam', label: "foaf:depicts", length: 100 },
       ]);
 
       // create a network
