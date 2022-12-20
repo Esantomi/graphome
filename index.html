@@ -117,6 +117,15 @@
           link: "src/cv.pdf"
         },
         { 
+          id: "wiki",
+          label: "장서각",
+          title: htmlTitle("더블 클릭 시 장서각으로 이동합니다."),
+          shape: "image",
+          image: DIR + "wiki.png",
+          size: "20",
+          link: "https://wiki.haein.info/"
+        },
+        { 
           id: "hobby",
           label: "Hobby",
           title: htmlTitle("제 취미들입니다."),
@@ -140,6 +149,7 @@
         { from: 'me', to: 'document', label: "dcterms:creator", length: 200 },
         { from: 'git', to: 'document', label: "foaf:page", length: 50 },
         { from: 'cv', to: 'document', label: "foaf:page", length: 50 },
+        { from: 'wiki', to: 'document', label: "foaf:page", length: 50 },
         { from: 'me', to: 'hobby', label: "foaf:interest", length: 200 },
         { from: 'cartoon', to: 'hobby', label: "foaf:topic", length: 50 },
         { from: 'cartoon', to: 'kokam', label: "foaf:depicts", length: 200 },
