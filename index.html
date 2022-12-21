@@ -26,7 +26,8 @@
         /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); */
         color: black;
         /* border-bottom: 2px solid #ccc; */
-        /* border-left: 10px solid #55555B; */
+        /* border-left: 50px solid #55555B; */
+        /* border-right: 50px solid #55555B; */
         padding: 0px 0px;
         margin: 0px 0px;
         margin-top: 10px;
@@ -41,7 +42,7 @@
     </style>
   </head>
   <body>
-    <center><h2>해인사(海印舍): Haein's Semantic Network</h2></center>
+    <center><h2>해인사(海印嗣): Haein's Semantic Network</h2></center>
     <div id="mynetwork"></div>
     <center><p>“The network graph on this page was created using <a href="https://visjs.org/" target="_blank">Vis.js</a> Network Library (Copyright © 2010-2017 Almende B.V.) by <a href="https://github.com/Esantomi" target="_blank">Esantomi</a>.”</p></center>
     <script type="text/javascript">
@@ -181,7 +182,7 @@
             size: 20,
             face: 'Rock Salt',
           },
-          title: htmlTitle("제가 그리는 만화들입니다."),
+          title: htmlTitle("더블 클릭 시 hedgehogtoon으로 이동합니다."),
           shape: "image",
           image: DIR + "cartoon.png",
           size: "50",
@@ -197,18 +198,19 @@
 
       // create an array with edges
       var edges = new vis.DataSet([
-        { from: 'family', to: 'me', label: "foaf:member", length: 200 },
-        { from: 'family', to: 'wife', label: "foaf:member", length: 50 },
-        { from: 'family', to: 'kokam', label: "foaf:member", length: 50 },
-        { from: 'me', to: 'webResource', label: "dcterms:creator", length: 200 },
-        { from: 'git', to: 'webResource', label: "foaf:page", length: 50 },
-        { from: 'cv', to: 'webResource', label: "foaf:page", length: 50 },
-        { from: 'wiki', to: 'webResource', label: "foaf:page", length: 50 },
-        { from: 'pavilion', to: 'webResource', label: "foaf:page", length: 50 },
-        { from: 'me', to: 'hobby', label: "foaf:interest", length: 200 },
-        { from: 'cartoon', to: 'hobby', label: "foaf:topic", length: 50 },
-        { from: 'cartoon', to: 'kokam', label: "foaf:depicts", length: 100 },
-        { from: 'me', to: 'work', label: "dcterms:creator", length: 200 },
+        { from: 'family', to: 'me', label: "foaf:member", arrows: "to" },
+        { from: 'family', to: 'wife', label: "foaf:member", arrows: "to" },
+        { from: 'family', to: 'kokam', label: "foaf:member", arrows: "to" },
+        { from: 'me', to: 'webResource', label: "dcterms:creator", arrows: "to" },
+        { from: 'git', to: 'webResource', label: "foaf:page", arrows: "to" },
+        { from: 'cv', to: 'me', label: "dcterms:description", arrows: "to" },
+        { from: 'wiki', to: 'webResource', label: "foaf:page", arrows: "to" },
+        { from: 'pavilion', to: 'webResource', label: "foaf:page", arrows: "to" },
+        { from: 'me', to: 'hobby', label: "foaf:interest", arrows: "to" },
+        { from: 'cartoon', to: 'hobby', label: "dcterms:isPartOf", arrows: "to" },
+        { from: 'cartoon', to: 'kokam', label: "foaf:depicts", arrows: "to" },
+        { from: 'cartoon', to: 'webResource', label: "foaf:page", arrows: "to" },
+        { from: 'me', to: 'work', label: "dcterms:creator", arrows: "to" },
       ]);
 
       // create a network
@@ -219,7 +221,7 @@
       };
       var options = {
         layout: {
-          randomSeed: 13,
+          randomSeed: 24,
         },
         interaction: {
           navigationButtons: false,
