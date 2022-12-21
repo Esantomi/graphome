@@ -81,7 +81,10 @@
         },
         { 
           id: "family",
-          label: "family",
+          label: "Family",
+          font: {
+            face: 'Gowun Batang',
+          },
           title: htmlTitle("제 가족들입니다."),
           link: '#'
         },
@@ -111,14 +114,20 @@
           link: '#'
         },
         { 
-          id: "document",
-          label: "document",
+          id: "webResource",
+          label: "Web Resource",
+          font: {
+            face: 'Gowun Batang',
+          },
           title: htmlTitle("저와 관련된 웹 페이지들입니다."),
           link: '#'
         },
         { 
           id: "git",
           label: "Github",
+          font: {
+            face: 'Gowun Batang',
+          },
           title: htmlTitle("더블 클릭 시 깃허브 페이지로 이동합니다."),
           shape: "image",
           image: DIR + "github.png",
@@ -128,6 +137,9 @@
         { 
           id: "cv",
           label: "CV",
+          font: {
+            face: 'Gowun Batang',
+          },
           title: htmlTitle("더블 클릭 시 CV 페이지로 이동합니다."),
           shape: "image",
           image: DIR + "cv.png",
@@ -137,6 +149,9 @@
         { 
           id: "wiki",
           label: "장서각",
+          font: {
+            face: 'Gowun Batang',
+          },
           title: htmlTitle("더블 클릭 시 장서각으로 이동합니다."),
           shape: "image",
           image: DIR + "wiki.png",
@@ -144,14 +159,32 @@
           link: "https://wiki.haein.info/"
         },
         { 
+          id: "pavilion",
+          label: "파빌리온",
+          font: {
+            face: 'Gowun Batang',
+          },
+          title: htmlTitle("더블 클릭 시 파빌리온 페이지로 이동합니다. (현재 미완)"),
+          shape: "image",
+          image: DIR + "pavilion.png",
+          size: "50",
+          link: "http://dh.aks.ac.kr/~haein/pavilion/220512/ADG.htm"
+        },
+        { 
           id: "hobby",
           label: "Hobby",
+          font: {
+            face: 'Gowun Batang',
+          },
           title: htmlTitle("제 취미들입니다."),
           link: '#'
         },
         { 
           id: "cartoon",
           label: "Cartoon",
+          font: {
+            face: 'Gowun Batang',
+          },
           title: htmlTitle("제가 그리는 만화들입니다."),
           shape: "image",
           image: DIR + "cartoon.png",
@@ -165,10 +198,11 @@
         { from: 'family', to: 'me', label: "foaf:member", length: 200 },
         { from: 'family', to: 'wife', label: "foaf:member", length: 50 },
         { from: 'family', to: 'kokam', label: "foaf:member", length: 50 },
-        { from: 'me', to: 'document', label: "dcterms:creator", length: 200 },
-        { from: 'git', to: 'document', label: "foaf:page", length: 50 },
-        { from: 'cv', to: 'document', label: "foaf:page", length: 50 },
-        { from: 'wiki', to: 'document', label: "foaf:page", length: 50 },
+        { from: 'me', to: 'webResource', label: "dcterms:creator", length: 200 },
+        { from: 'git', to: 'webResource', label: "foaf:page", length: 50 },
+        { from: 'cv', to: 'webResource', label: "foaf:page", length: 50 },
+        { from: 'wiki', to: 'webResource', label: "foaf:page", length: 50 },
+        { from: 'pavilion', to: 'webResource', label: "foaf:page", length: 50 },
         { from: 'me', to: 'hobby', label: "foaf:interest", length: 200 },
         { from: 'cartoon', to: 'hobby', label: "foaf:topic", length: 50 },
         { from: 'cartoon', to: 'kokam', label: "foaf:depicts", length: 100 },
@@ -182,7 +216,7 @@
       };
       var options = {
         layout: {
-          randomSeed: 6,
+          randomSeed: 1,
         },
         interaction: {
           navigationButtons: false,
