@@ -59,75 +59,75 @@ var nodes = new vis.DataSet([
         size: 20,
         face: 'Rock Salt',
       },
-      title: htmlTitle("제가 키우는 고슴도치입니다."),
+      title: htmlTitle("제가 키웠던 고슴도치입니다. 지금은 도치별로 떠났습니다."),
       shape: "image",
       image: DIR + "kokam.png",
       imagePadding: -15,
       size: "50",
       link: '#'
     },
-    { 
-      id: "webResource",
-      label: "Web Resource",
-      title: htmlTitle("저와 관련된 웹 페이지들입니다."),
-      link: '#'
-    },
-    { 
-      id: "git",
-      label: "Github",
-      font: {
-        size: 20,
-        face: 'Rock Salt',
-      },
-      title: htmlTitle("더블 클릭 시 깃허브 페이지로 이동합니다."),
-      shape: "image",
-      image: DIR + "github.png",
-      imagePadding: -15,
-      size: "50",
-      link: "https://github.com/Esantomi"
-    },
-    {
-      id: "cv",
-      label: "CV",
-      font: {
-        size: 20,
-        face: 'Rock Salt',
-      },
-      title: htmlTitle("더블 클릭 시 CV 페이지로 이동합니다."),
-      shape: "image",
-      image: DIR + "cv.png",
-      imagePadding: -10,
-      size: "50",
-      link: "src/cv.pdf"
-    },
-    { 
-      id: "wiki",
-      label: "Jangseogak",
-      font: {
-        size: 20,
-        face: 'Rock Salt',
-      },
-      title: htmlTitle("더블 클릭 시 장서각으로 이동합니다."),
-      shape: "image",
-      image: DIR + "wiki.png",
-      imagePadding: -15,
-      size: "20",
-      link: "https://wiki.haein.info/"
-    },
-    { 
-      id: "pavilion",
-      label: "Pavilion",
-      font: {
-        size: 20,
-        face: 'Rock Salt',
-      },
-      title: htmlTitle("더블 클릭 시 파빌리온 페이지로 이동합니다. (현재 미완)"),
-      shape: "image",
-      image: DIR + "pavilion.png",
-      imagePadding: -15,
-      size: "50",
-      link: "http://dh.aks.ac.kr/~haein/pavilion/220512/ADG.htm"
-    },
+    // { 
+    //   id: "webResource",
+    //   label: "Web Resource",
+    //   title: htmlTitle("저와 관련된 웹 페이지들입니다."),
+    //   link: '#'
+    // },
+    // { 
+    //   id: "git",
+    //   label: "Github",
+    //   font: {
+    //     size: 20,
+    //     face: 'Rock Salt',
+    //   },
+    //   title: htmlTitle("더블 클릭 시 깃허브 페이지로 이동합니다."),
+    //   shape: "image",
+    //   image: DIR + "github.png",
+    //   imagePadding: -15,
+    //   size: "50",
+    //   link: "https://github.com/Esantomi"
+    // },
+    // {
+    //   id: "cv",
+    //   label: "CV",
+    //   font: {
+    //     size: 20,
+    //     face: 'Rock Salt',
+    //   },
+    //   title: htmlTitle("더블 클릭 시 CV 페이지로 이동합니다."),
+    //   shape: "image",
+    //   image: DIR + "cv.png",
+    //   imagePadding: -10,
+    //   size: "50",
+    //   link: "src/cv.pdf"
+    // },
+    // { 
+    //   id: "wiki",
+    //   label: "Jangseogak",
+    //   font: {
+    //     size: 20,
+    //     face: 'Rock Salt',
+    //   },
+    //   title: htmlTitle("더블 클릭 시 장서각으로 이동합니다."),
+    //   shape: "image",
+    //   image: DIR + "wiki.png",
+    //   imagePadding: -15,
+    //   size: "20",
+    //   link: "https://wiki.haein.info/"
+    // },
+    // { 
+    //   id: "pavilion",
+    //   label: "Pavilion",
+    //   font: {
+    //     size: 20,
+    //     face: 'Rock Salt',
+    //   },
+    //   title: htmlTitle("더블 클릭 시 파빌리온 페이지로 이동합니다. (현재 미완)"),
+    //   shape: "image",
+    //   image: DIR + "pavilion.png",
+    //   imagePadding: -15,
+    //   size: "50",
+    //   link: "http://dh.aks.ac.kr/~haein/pavilion/220512/ADG.htm"
+    // },
     { 
       id: "hobby",
       label: "Hobby",
@@ -148,12 +148,12 @@ var nodes = new vis.DataSet([
       size: "50",
       link: "https://hedgehogtoon.site/"
     },
-    { 
-      id: "work",
-      label: "Work",
-      title: htmlTitle("제 성과들입니다. 추후 추가될 예정입니다."),
-      link: '#'
-    }
+    // { 
+    //   id: "work",
+    //   label: "Work",
+    //   title: htmlTitle("제 성과들입니다. 추후 추가될 예정입니다."),
+    //   link: '#'
+    // }
 ]);
 
 // create an array with edges
