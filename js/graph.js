@@ -6,7 +6,7 @@ var data = {
 };
 var options = {
     layout: {
-      randomSeed: 24,
+      randomSeed: 13,
     },
     interaction: {
       navigationButtons: false,
