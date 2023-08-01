@@ -146,7 +146,7 @@ var nodes = new vis.DataSet([
       image: DIR + "cartoon.png",
       imagePadding: -15,
       size: "50",
-      link: "https://hedgehogtoon.site/"
+      link: "https://toon.haein.info/"
     },
     // { 
     //   id: "work",
